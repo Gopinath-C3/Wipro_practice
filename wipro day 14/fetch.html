@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch API Example - Task 1</title>
+</head>
+<body>
+  <h1>Employee Data Fetch Example</h1>
+
+  <p>Open your browser console to see the employee data.</p>
+  <button id="getDataBtn">Get Employee Data</button>
+
+  <script>
+  
+    document.getElementById("getDataBtn").addEventListener("click", function() {
+      
+      
+      fetch("https://dummy.restapiexample.com/api/v1/employees")
+        .then(function(response) {
+
+          return response.json();
+        })
+        .then(function(data) {
+        
+          console.log("Employee Data:");
+          console.log(data);
+        })
+        .catch(function(error) {
+        
+          console.log("Error fetching data:", error);
+        });
+    });
+  </script>
+</body>
+</html>
+
